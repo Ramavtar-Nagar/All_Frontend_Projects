@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Image To Do List</title>
+</head>
+
+<body>
+    <div class="app-container">
+        <h1>Image To Do List</h1>
+        
+        <div class="upload-section">
+            <div id="dropzone" class="dropzone">Drag & Drop Images Here or Click to Browse</div>
+            <input type="file" id="fileInput" accept="image/*" multiple style="display: none;">
+        </div>
+
+        <div id="inputSection" class="input-section" style="display: none;">
+            <input type="text" id="descriptionInput" placeholder="Enter image description">
+            <button id="addImageButton">Add Image</button>
+        </div>
+
+        <div class="file-list" id="fileList">
+            <!-- Uploaded images will be displayed here -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

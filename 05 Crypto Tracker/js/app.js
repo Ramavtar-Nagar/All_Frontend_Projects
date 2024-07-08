@@ -12,8 +12,9 @@ const fetchCoins = async () => {
     try {
         const response = await fetch("https://coingecko.p.rapidapi.com/coins/markets?page=1&vs_currency=usd&per_page=100&order=market_cap_desc", options);
         coins = await response.json();
-        console.log(coins);
-        console.log(response)
+        return coins;
+        //console.log(coins);
+        //console.log(response)
     } catch (error) {
         console.error("Error while fetching coins", error);
     }

@@ -22,7 +22,18 @@ const fetchCoins = async () => {
 };
 
 const handleFavClick = (coinId) => {
-
+    const favIcon = document.querySelector(`.favourite-icon[data-id="${coinId}"]`);
+    if (favIcon.classList.contains("fa-star")) {
+        //TO-DO Add to favorites (you can implement your specific logic here)
+        favIcon.classList.remove("fa-star");
+        favIcon.classList.add("fa-star-solid");
+        console.log(`Added ${coinId} to favorites`);
+    } else {
+        //TO-DO Remove from favorites (you can implement your specific logic here)
+        favIcon.classList.remove("fa-star-solid");
+        favIcon.classList.add("fa-star");
+        console.log(`Removed ${coinId} from favorites`);
+    }
 }
 
 // Step 2 => display the data on the page
@@ -41,7 +52,10 @@ const displayCoins = (coins) => {
             <td>$ ${coin.market_cap}</td>
             <td><i class="fa-solid fa-star favourite-icon" data-id="${coin.id}"></i></td>
         `;
-       
+        row.getElementsByClassName("favourite-icon").addEventListener('click', (event) => {
+            event.stopPropogation();
+            handleFavClick(coin.id);
+        })
         tableBody.appendChild(row);
     }) 
 }

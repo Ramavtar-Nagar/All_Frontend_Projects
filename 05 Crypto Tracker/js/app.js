@@ -1,3 +1,5 @@
+const shimmerContainer = document.getElementsByClassName("shimmer-container")[0];
+
 const options = {
     method: "GET",
     headers: {
@@ -7,6 +9,8 @@ const options = {
 }
 
 let coins = [];
+let itemsPerPage = 15;
+let currentPage = 1;
 
 // Step 1 => Fetching the data from the API
 const fetchCoins = async () => {
@@ -22,18 +26,21 @@ const fetchCoins = async () => {
 };
 
 const handleFavClick = (coinId) => {
-    const favIcon = document.querySelector(`.favourite-icon[data-id="${coinId}"]`);
-    if (favIcon.classList.contains("fa-star")) {
-        //TO-DO Add to favorites (you can implement your specific logic here)
-        favIcon.classList.remove("fa-star");
-        favIcon.classList.add("fa-star-solid");
-        console.log(`Added ${coinId} to favorites`);
-    } else {
-        //TO-DO Remove from favorites (you can implement your specific logic here)
-        favIcon.classList.remove("fa-star-solid");
-        favIcon.classList.add("fa-star");
-        console.log(`Removed ${coinId} from favorites`);
-    }
+    
+}
+
+const getCoinsToDisplay = (coins, pageno) => {
+
+}
+
+// Show Shimmer => 
+const showShimmer = () => {
+    shimmerContainer.style.display = "flex";
+}
+
+// Hide Shimmere => 
+const hideShimmer = () => {
+    shimmerContainer.style.display = "none"
 }
 
 // Step 2 => display the data on the page
@@ -60,6 +67,7 @@ const displayCoins = (coins) => {
     }) 
 }
 document.addEventListener("DOMContentLoaded", async () => {
+    
     coins = await fetchCoins();
     console.log(coins);
     displayCoins(coins)

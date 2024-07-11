@@ -29,8 +29,10 @@ const handleFavClick = (coinId) => {
     
 }
 
-const getCoinsToDisplay = (coins, pageno) => {
-
+const getCoinsToDisplay = (coins, page) => {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return coins.slice(start, end);
 }
 
 // Show Shimmer => 

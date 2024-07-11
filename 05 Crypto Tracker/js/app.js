@@ -61,7 +61,7 @@ const displayCoins = (coins) => {
             <td>$ ${coin.market_cap}</td>
             <td><i class="fa-solid fa-star favourite-icon" data-id="${coin.id}"></i></td>
         `;
-        row.getElementsByClassName("favourite-icon").addEventListener('click', (event) => {
+        row.querySelector(".favourite-icon").addEventListener('click', (event) => {
             event.stopPropogation();
             handleFavClick(coin.id);
         })

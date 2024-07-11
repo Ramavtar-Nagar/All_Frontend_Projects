@@ -1,4 +1,5 @@
 const shimmerContainer = document.getElementsByClassName("shimmer-container")[0];
+const paginationContainer = document.getElementById("pagination");
 
 const options = {
     method: "GET",
@@ -68,11 +69,28 @@ const displayCoins = (coins) => {
         tableBody.appendChild(row);
     }) 
 }
+
+// for pagination icons
+const renderPagination = (coins) => {
+    const totalPages = Math.ceil(coins.length / itemsPerPage);
+    paginationContainer.innerHTML = "";
+
+    for( let i=1; i <= totalPages; i++){
+        // creating buttons of tatal pages length
+        const pageBtn = document.createElement("button");
+        pageBtn.classList.add("page-button");
+        pageBtn.textContent = i;
+
+        paginationContainer.appendChild(pageBtn);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     try {
         showShimmer();
         coins = await fetchCoins();
         displayCoins(getCoinsToDisplay(coins, currentPage));
+        renderPagination(coins)
         hideShimmer();
     } catch (error) {
         console.log(error);

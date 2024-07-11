@@ -67,8 +67,16 @@ const displayCoins = (coins) => {
     }) 
 }
 document.addEventListener("DOMContentLoaded", async () => {
-    
-    coins = await fetchCoins();
-    console.log(coins);
-    displayCoins(coins)
+    try {
+        showShimmer();
+        coins = await fetchCoins();
+        displayCoins(getCoinsToDisplay(coins, currentPage));
+        hideShimmer();
+    } catch (error) {
+        console.log(error);
+        hideShimmer();
+    }
+    // coins = await fetchCoins();
+    // console.log(coins);
+    // displayCoins(coins)
 })

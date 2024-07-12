@@ -32,6 +32,8 @@ const fetchFavouriteCoins = () => {
 
 const saveFavouriteCoins = (favourites) => {
     localStorage.setItem("favourites", JSON.stringify(favourites));
+    console.log(favourites);
+
 }
 
 const handleFavClick = (coinId) => {
@@ -74,12 +76,14 @@ const displayCoins = (coins, currentPage) => {
             <td>$ ${coin.current_price}</td>
             <td>${coin.total_volume}</td>
             <td>$ ${coin.market_cap}</td>
-            <td><i class="fa-solid fa-star favourite-icon" data-id="${coin.id}"></i></td>
+            <td><i class="fa-solid fa-star favourite-icon" data-id="${coin.id}" onClick="handleFavClick(this)"></i></td>
         `;
-        row.querySelector(".favourite-icon").addEventListener('click', (event) => {
-            event.stopPropogation();
-            handleFavClick(coin.id);
-        })
+        //  const favIcon = row.querySelectorAll(".favourite-icon")
+        //  favIcon.addEventListener('click', (event) => {
+        //     event.stopPropogation();
+        //     handleFavClick(coin.id);
+        //     console.log();
+        // })
         tableBody.appendChild(row);
     }) 
 }

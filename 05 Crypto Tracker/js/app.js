@@ -48,13 +48,16 @@ const hideShimmer = () => {
 
 // Step 2 => display the data on the page
 
-const displayCoins = (coins) => {
+const displayCoins = (coins, currentPage) => {
+
+    const start = (currentPage - 1) * itemsPerPage + 1;
+
     const tableBody = document.getElementById("crypto-table-body");
     tableBody.innerHTML = "";
     coins.forEach((coin, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td>${index}</td>
+            <td>${start + index}</td>
             <td><img src="${coin.image}" alt="${coin.name}" width="24" height="24"/></td>
             <td>${coin.name}</td>
             <td>$ ${coin.current_price}</td>
@@ -87,6 +90,7 @@ const renderPagination = (coins) => {
 
         pageBtn.addEventListener("click", () => {
             currentPage = i;
+            displayCoins(getCoinsToDisplay(coins, currentPage), currentPage);
             updatePaginationButtons();
         });
 
@@ -109,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         showShimmer();
         coins = await fetchCoins();
-        displayCoins(getCoinsToDisplay(coins, currentPage));
+        displayCoins(getCoinsToDisplay(coins, currentPage), currentPage);
         renderPagination(coins)
         hideShimmer();
     } catch (error) {

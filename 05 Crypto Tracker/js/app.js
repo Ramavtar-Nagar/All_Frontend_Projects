@@ -36,12 +36,25 @@ const saveFavouriteCoins = (favourites) => {
 
 }
 
-const handleFavClick = (coinId) => {
-    const favourites = [];
+const handleFavClick = (element) => {
+    // console.log(element.dataset.id);
+    let favourites = fetchFavouriteCoins();
+
+    // If coinId is already present in favourites then remove it
+    if (favourites.includes(element.dataset.id)) {
+        favourites = favourites.filter((id) => id !== element.dataset.id);
+    }
     // saving the coinId
-    favourites.push(coinId);
+    favourites.push(element.dataset.id);
     saveFavouriteCoins(favourites);
 }
+
+// const handleFavClick = (coinId) => {
+//     const favourites = [];
+//     // saving the coinId
+//     favourites.push(coinId);
+//     saveFavouriteCoins(favourites);
+// }
 
 const getCoinsToDisplay = (coins, page) => {
     const start = (page - 1) * itemsPerPage;

@@ -26,8 +26,19 @@ const fetchCoins = async () => {
     }
 };
 
+const fetchFavouriteCoins = () => {
+    return JSON.parse(localStorage.getItem("favourites")) || [];
+};
+
+const saveFavouriteCoins = (favourites) => {
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+}
+
 const handleFavClick = (coinId) => {
-    
+    const favourites = [];
+    // saving the coinId
+    favourites.push(coinId);
+    saveFavouriteCoins(favourites);
 }
 
 const getCoinsToDisplay = (coins, page) => {

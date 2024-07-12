@@ -78,12 +78,32 @@ const renderPagination = (coins) => {
     for( let i=1; i <= totalPages; i++){
         // creating buttons of tatal pages length
         const pageBtn = document.createElement("button");
-        pageBtn.classList.add("page-button");
         pageBtn.textContent = i;
+        pageBtn.classList.add("page-button");
+
+        if(i === currentPage){
+            pageBtn.classList.add("active");
+        }
+
+        pageBtn.addEventListener("click", () => {
+            currentPage = i;
+            updatePaginationButtons();
+        });
 
         paginationContainer.appendChild(pageBtn);
     }
-}
+};
+
+const updatePaginationButtons = () => {
+    const pageBtns = document.querySelectorAll(".page-button");
+    pageBtns.forEach((button, index) => {
+        if(index + 1 === currentPage) {
+            button.classList.add("active");
+        } else {
+            button.classList.remove("active");
+        }
+    });
+};
 
 document.addEventListener("DOMContentLoaded", async () => {
     try {

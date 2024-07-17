@@ -166,7 +166,7 @@ gsap.to(imageSeq, {
     end: `250% top`,
     scroller: `#main`,
   },
-  onUpdate: rendr,
+  onUpdate: render,
 });
 
 images[1].onload = render;
@@ -197,10 +197,10 @@ function scaleImage(img, ctx) {
 }
 ScrollTrigger.create({
 
-  trigger: "page3",
+  trigger: "#page3",
   pin: true,
-  scroller: `main`,
-  start: `top tp`,
+  scroller: `#main`,
+  start: `top top`,
   end: `250% top`,
 });
 }

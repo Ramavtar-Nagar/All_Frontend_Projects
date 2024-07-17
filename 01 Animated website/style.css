@@ -1,11 +1,147 @@
 * {
-    height: 0;
-    width: 0;
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
 }
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: a;
+    src: url(./jost-variable.ttf);
+}
+@font-face {
+    font-family: b;
+    src: url(./KFOlCnqEu92Fr1MmEU9fBBc4\ \(1\).ttf);
+}
+@font-face {
+    font-family: c;
+    src: url(./KFOmCnqEu92Fr1Mu4mxK\ \(1\).ttf);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100vw;
+    /* background-color: red; */
+    position: relative;
+}
+
+#page1>video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page1>nav {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    position: absolute;
+    height: 9vh;
+    width: 100vw;
+}
+
+#page1>nav>img {
+    margin-top: -2.9vw;
+    margin-left: -6vw;
+    width: 13%;
+}
+
+#right-nav>button {
+    margin: 5px 10px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #0b48ed;
+    border: 0.1px solid #fff;
+    color: #fff;
+    font-family: a;
+    font-size: 15px;
+}
+
+.bottom-page1 {
+    position: absolute;
+    height: 30vh;
+    width: 50vw;
+    bottom: 28%;
+    left: 9%;
+    /* background-color: red; */
+}
+
+.bottom-page1>h1 {
+    font-family: a;
+    font-size: 6.5vw;
+    font-weight: 100;
+    line-height: 1;
+    color: whitesmoke;
+}
+
+.bottom-page1-inner {
+    position: absolute;
+    bottom: -45%;
+    height: 35%;
+    width: 100%;
+    /* background: magenta; */
+}
+
+.bottom-page1-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px 0px 0px;
+    font-family:a;
+    color: #fff;
+    font-size: 2.5vh;
+}
+
+.bottom-page1-inner>button {
+    margin-right: 130px;
+    padding: 13px 43px;
+    border: none;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #0b48ed;
+    font-size: 16px;
+    font-family: a;
+}
+
+.bottom-page1-inner>h4 {
+    size: 1.3vw;
+    font-weight: 100;
+    color: #fff;
+}
+
+#page2{
+    display: flex;
+    align-items: start;
+    font-family: a;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding: 0vw 8vw;
+    color: #fff;
+    background-color: #0a3cce;
+}
+#page2>h2{
+    margin-bottom: 3vw;
+    font-weight: 100;
+}
+#page2>h1{
+    font-weight: 100;
+    line-height: 1.3;
+    width: 100%;
+    font-size: 4vw;
+    color: #dadada69;
+    }

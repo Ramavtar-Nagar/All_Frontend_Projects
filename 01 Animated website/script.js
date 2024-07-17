@@ -47,10 +47,15 @@ gsap.to("#page2>h1>span", {
     end: `bottom 76%`, // Adjusted end point
     scroller: `#main`,
     scrub: 0.5,
-    markers: true
+    // markers: true
   },
   stagger: 0.2,
   color: `#fff`
 });
 
 
+// page 3 Javascript
+
+function canvas(){
+}
+canvas()

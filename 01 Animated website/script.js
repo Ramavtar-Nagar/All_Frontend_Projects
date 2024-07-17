@@ -31,25 +31,26 @@ ScrollTrigger.refresh();
 loco()
 
 
-// Page 2 javascript
+// Page 2 JavaScript
 var clutter = "";
 
 document.querySelector("#page2>h1").textContent.split(" ").forEach(function(dets){
   clutter += `<span> ${dets} </span>`;
-
 });
+
 document.querySelector("#page2>h1").innerHTML = clutter;
 
 gsap.to("#page2>h1>span", {
-  scrollTrigger:{
+  scrollTrigger: {
     trigger: `#page2>h1`,
-    start: `top bottom`,
-    end: `bottom top`,
+    start: `top 80%`,  // Adjusted start point
+    end: `bottom 76%`, // Adjusted end point
     scroller: `#main`,
-    scrub: .5,
+    scrub: 0.5,
     markers: true
   },
-  stagger: .2,
+  stagger: 0.2,
   color: `#fff`
-})
+});
+
 

@@ -72,6 +72,72 @@ function canvas(){
 
   function files(index) {
     var data = `
+    ./frames00007.png
+    ./frames00010.png
+    ./frames00013.png
+    ./frames00016.png
+    ./frames00019.png
+    ./frames00022.png
+    ./frames00025.png
+    ./frames00028.png
+    ./frames00031.png
+    ./frames00034.png
+    ./frames00037.png
+    ./frames00040.png
+    ./frames00043.png
+    ./frames00046.png
+    ./frames00049.png
+    ./frames00052.png
+    ./frames00055.png
+    ./frames00058.png
+    ./frames00061.png
+    ./frames00064.png
+    ./frames00067.png
+    ./frames00070.png
+    ./frames00073.png
+    ./frames00076.png
+    ./frames00079.png
+    ./frames00082.png
+    ./frames00085.png
+    ./frames00088.png
+    ./frames00091.png
+    ./frames00094.png
+    ./frames00097.png
+    ./frames00100.png
+    ./frames00103.png
+    ./frames00106.png
+    ./frames00109.png
+    ./frames00112.png
+    ./frames00115.png
+    ./frames00118.png
+    ./frames00121.png
+    ./frames00124.png
+    ./frames00127.png
+    ./frames00130.png
+    ./frames00133.png
+    ./frames00136.png
+    ./frames00139.png
+    ./frames00142.png
+    ./frames00145.png
+    ./frames00148.png
+    ./frames00151.png
+    ./frames00154.png
+    ./frames00157.png
+    ./frames00160.png
+    ./frames00163.png
+    ./frames00166.png
+    ./frames00169.png
+    ./frames00172.png
+    ./frames00175.png
+    ./frames00178.png
+    ./frames00181.png
+    ./frames00184.png
+    ./frames00187.png
+    ./frames00190.png
+    ./frames00193.png
+    ./frames00196.png
+    ./frames00199.png
+    ./frames00202.png
     `;
     return data.split("\n")[index];
 }
@@ -100,7 +166,7 @@ gsap.to(imageSeq, {
     end: `250% top`,
     scroller: `#main`,
   },
-  onUpdate: render,
+  onUpdate: rendr,
 });
 
 images[1].onload = render;
@@ -131,10 +197,10 @@ function scaleImage(img, ctx) {
 }
 ScrollTrigger.create({
 
-  trigger: "#page3",
+  trigger: "page3",
   pin: true,
-  scroller: `#main`,
-  start: `top top`,
+  scroller: `main`,
+  start: `top tp`,
   end: `250% top`,
 });
 }

@@ -642,7 +642,7 @@ canvas2()
 gsap.to(".page7-cir",{
   scrollTrigger:{
     trigger: `.page7-cir`,
-    start:`top center`,\
+    start:`top center`,
     end:`bottom top`,
     scroller: `#main`,
     scrub:.5

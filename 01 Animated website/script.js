@@ -585,5 +585,79 @@ function canvas2(){
     img.src = files(i);
     images.push(img);
   }
+
+  gsap.to(imageSeq, {
+    frameCount: frameCount -1,
+    snap: "frame",
+    ease: `none`,
+    scrollTrigger: {
+      trigger: `#page7`,
+      start: 'top top',
+      end: `250% top`,
+      scroller: `#main`,
+    },
+    onUpdate: render,
+  });
   
+  images[1].onload = render;
+
+  function render() {
+    scaleImage(images[imageSeq.frame], context);
+  }
+
+  function scaleImage(img, ctx) {
+    var canvas = ctx.canvas;
+    var vRatio = canvas.height / img.height;
+    var hRatio = canvas.width / img.width;
+
+    var ratio = Math.max(hRatio, vRatio);
+    var centerShift_x = (canvas.width - img.width * ratio) / 2;
+    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      img.width,
+      img.height,
+      centerShift_x,
+      centerShift_y,
+      img.width * ratio,
+      img.height * ratio
+    );
+  }
+
+  scrollTrigger.create({
+    trigger: "#page7",
+    pin: true,
+    scroller: `#main`,
+    start: `top top`,
+    end: `250% top`,
+  });
+
 }
+canvas2()
+
+
+gsap.to(".page7-cir",{
+  scrollTrigger:{
+    trigger: `.page7-cir`,
+    start:`top center`,\
+    end:`bottom top`,
+    scroller: `#main`,
+    scrub:.5
+  },
+  scale: 1.5
+})
+
+
+gsap.to(".page7-cir-inner", {
+  scrollTrigger: {
+    trigger: `.page7-cir-inner`,
+    start: `top center`,
+    end: `bottok top`,
+    scroller: `#main`,
+    scrub:.5
+  },
+  backgroundColor: `#0a3bce91`
+})

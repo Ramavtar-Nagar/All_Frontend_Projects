@@ -354,7 +354,7 @@ body {
     top: 5%;
     left: 10%;
     font-size: 4vw;
-    color: #fff;
+    color: #000;
     font-weight: 100;
 }
 
@@ -393,10 +393,8 @@ body {
 
 .right11>h4 {
     font-weight: 100;
-    color: #fff;
 }
 
 .right11>h1 {
     font-size: 2vw;
-    color: #fff;
 }

@@ -47,6 +47,8 @@ const handleFavClick = (element) => {
     // saving the coinId
     favourites.push(element.dataset.id);
     saveFavouriteCoins(favourites);
+
+    displayCoins(getCoinsToDisplay(coins, currentPage), currentPage);
 }
 
 // const handleFavClick = (coinId) => {
@@ -78,10 +80,15 @@ const displayCoins = (coins, currentPage) => {
 
     const start = (currentPage - 1) * itemsPerPage + 1;
 
+    const favourites = fetchFavouriteCoins()
+
     const tableBody = document.getElementById("crypto-table-body");
     tableBody.innerHTML = "";
     coins.forEach((coin, index) => {
         const row = document.createElement("tr");
+        
+        const isFavourite = favourites.includes(coin.id);
+
         row.innerHTML = `
             <td>${start + index}</td>
             <td><img src="${coin.image}" alt="${coin.name}" width="24" height="24"/></td>
@@ -89,7 +96,7 @@ const displayCoins = (coins, currentPage) => {
             <td>$ ${coin.current_price}</td>
             <td>${coin.total_volume}</td>
             <td>$ ${coin.market_cap}</td>
-            <td><i class="fa-solid fa-star favourite-icon" data-id="${coin.id}" onClick="handleFavClick(this)"></i></td>
+            <td><i class="fa-solid fa-star favourite-icon ${isFavourite ? "favourite" : ""}" data-id="${coin.id}" onClick="handleFavClick(this)"></i></td>
         `;
         //  const favIcon = row.querySelectorAll(".favourite-icon")
         //  favIcon.addEventListener('click', (event) => {

@@ -399,28 +399,28 @@ body {
     font-size: 2vw;
 }
 
-#page12{
+#page12 {
     position: relative;
     height: 100vh;
     width: 100vw;
     background-color: #02268e;
 }
-.page12-inner{
+.page12-inner {
     position: absolute;
     top: 20%;
     right: 10%;
     color: #fff;
     font-family: a;
 }
-.page12-inner>h1{
+.page12-inner>h1 {
     font-size: 5vw;
     font-weight: 100;
 }
-.page12-inner>p{
+.page12-inner>p {
     font-size: 1.3vw;
 }
 
-#page13{
+#page13 {
     position: relative;
     height: 50vh;
     width: 100vw;
@@ -429,18 +429,67 @@ body {
     font-family: a;
     padding: 7vw 10vw;
 }
-#page13>h1{
+#page13>h1 {
     font-size: 5vw;
     line-height: 1;
     font-weight: 100;
 }
-#page13>button{
+
+#page13>button {
     padding: 18px 30px;
     border: none;
     background-color: #0a3cce;
     color: #fff;
     border-radius: 50px;
     margin-top: 2vw;
+}
+
+#page14{
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    background-color: #000;
+}
+.page14-inner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 5vw;
+    font-family: a;
+    height: 33.3%;
+    width: 100%;
+    color: #fff;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff48;
+}
+.page14-inner>i{
+    font-weight: 100;
+    font-size: 2.4vw;
+    position: relative;
+    z-index: 9999;
+}
+.page14-inner>h1{
+    font-size: 3vw;
+    font-weight: 100;
+    position: relative;
+    z-index: 9999;
+}
+
+.center14{
+    height: 0%;
+    width: 100%;
+    background-color: #0a3cce;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease .5s;
+}
+
+
+.page14-inner:hover .center14{
+    height: 100%;
 }
 
 
